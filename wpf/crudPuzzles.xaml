@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="wpf.crudPuzzles"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:wpf"
+             mc:Ignorable="d"
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="1.3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!-- listbox puzzles -->
+        <!--<ListBox x:Name="lbPuzzles" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Margin="10" Background="Cornsilk" BorderBrush="Chocolate" BorderThickness="4">
+        </ListBox>-->
+        <DataGrid x:Name="dataPuzzles" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Background="Cornsilk" BorderBrush="Chocolate" BorderThickness="4" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dataPuzzles_SelectionChanged">
+            <DataGrid.Columns>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!-- rij 1 -->
+        <Button x:Name="btncreatePuzzle" Content="Create a puzzle" Grid.Row="1" Grid.Column="0" Margin="10"  VerticalAlignment="Center" Click="btncreatePuzzle_Click" ></Button>
+        <Button x:Name="btneditPuzzle" Content="Edit a puzzle" Grid.Row="1" Grid.Column="1" Margin="10"  VerticalAlignment="Center" Click="btneditPuzzle_Click" ></Button>
+        <Button x:Name="btndeletePuzzle" Content="Delete a Puzzle" Grid.Row="1"  Grid.Column="2" Margin="10"  VerticalAlignment="Center" Click="btndeletePuzzle_Click" ></Button>
+
+        <!-- rij 2 -->
+        <Button x:Name="btnfilter" Content="Filter" Grid.Row="2" Grid.Column="0" Margin="10"  VerticalAlignment="Center" Click="btnfilter_Click" ></Button>
+        <StackPanel Margin="2" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center">
+            <TextBlock Text="Puzzle-name:" HorizontalAlignment="Center" />
+            <TextBox x:Name="txtPuzzle"   HorizontalAlignment="Stretch" TextAlignment="Center" TextWrapping="Wrap" Background="Cornsilk" />
+        </StackPanel>
+        <StackPanel Margin="2" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center">
+            <TextBlock Text="Puzzle-asset" HorizontalAlignment="Center" />
+            <ComboBox x:Name="cmbasset" Margin="10" Background="Cornsilk" VerticalAlignment="Center">
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Margin="2" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center">
+            <TextBlock Text="Picarats" HorizontalAlignment="Center" />
+            <TextBox x:Name="txtPicarats"   HorizontalAlignment="Stretch" TextAlignment="Center" TextWrapping="Wrap" Background="Cornsilk" />
+        </StackPanel>
+        <!-- rij 3 -->
+        <Button x:Name="btnGivesPuzzle" Content="Characters that gives &#xa; puzzle by asset" Grid.Row="3" Grid.Column="1" Margin="10" MinHeight="50" Click="btnGivesPuzzle_Click"></Button>
+        <Button x:Name="btnSolvesPuzzle" Content="Characters that solves &#xa; puzzle by asset" Grid.Row="3" Grid.Column="2" Margin="10" MinHeight="50" Click="btnSolvesPuzzle_Click"></Button>
+        <Button x:Name="btnBack" Content="back" Grid.Row="3" Grid.Column="4" Margin="10"  VerticalAlignment="Center" Click="btnBack_Click" ></Button>
+    </Grid>
+</UserControl>

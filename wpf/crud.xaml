@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="wpf.crud"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:wpf"
+             mc:Ignorable="d"
+             d:DesignHeight="720" d:DesignWidth="1280"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!-- tabs -->
+        <TabControl Grid.Row="0" Grid.Column="0"
+                    Style="{StaticResource MaterialDesignNavigatilRailTabControl}"
+                    materialDesign:NavigationRailAssist.ShowSelectionBackground="True"
+                    x:Name="tabControl" SelectionChanged="tabControl_SelectionChanged">
+            <TabItem x:Name="tabCharacters">
+                <TabItem.Header>
+                    <StackPanel>
+                        <Image Source="https://www.joel-entertainment.be/afbeeldingen/ui/character.png" Width="50" Height="50" HorizontalAlignment="Center" />
+                        <TextBlock Text="Characters" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="tabRelations">
+                <TabItem.Header>
+                    <StackPanel>
+                        <Image Source="https://www.joel-entertainment.be/afbeeldingen/ui/relation - kopie.png" Width="50" Height="50" HorizontalAlignment="Center" />
+                        <TextBlock Text="Relations" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="tabPuzzles">
+                <TabItem.Header>
+                    <StackPanel>
+                        <Image Source="https://www.joel-entertainment.be/afbeeldingen/ui/puzzle.png" Width="50" Height="50" HorizontalAlignment="Center" />
+                        <TextBlock Text= "Puzzles" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+        <!-- andere crud -->
+        <ContentControl x:Name="ContentWindow" Grid.Row="0" Grid.Column="1">
+        </ContentControl>
+    </Grid>
+</UserControl>
